@@ -1,11 +1,15 @@
-from .users import User
-
+# class student
+from .user import User
 class Student(User):
-    
-    def __init__(self, name, email, phone,school_email):
-        super().__init__(name, email, phone)
-        self.school_email = school_email
+    def __init__(self,name,phone,email,student_email,cohort):
+        super().__init__(name,phone,email)
+        self.student_email = student_email
+        self.cohort = cohort
         
-    def send_attedance_warning(self):
-        print(f'{self.name} you have been warned')
-    
+    def mark_attedance(self,present:bool):
+        if present:
+            print(self.name,"was marked as present")
+        else:
+            print(self.name,"was marked as Absent")
+        
+        
